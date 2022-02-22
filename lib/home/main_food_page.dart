@@ -33,6 +33,9 @@ class _HomeFoodPageState extends State< MainFoodPage> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         color: Color(0xFF89dad0),
+
+
+                        
                       ),
                     ),
                   )
