@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tomato/home/food_page_body.dart';
+import 'package:tomato/widgets/big_text.dart';
+import 'package:tomato/widgets/small_text.dart';
 
 class MainFoodPage extends StatefulWidget{
   const MainFoodPage({Key? key}) :super (key: key);
@@ -20,9 +23,14 @@ class _HomeFoodPageState extends State< MainFoodPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(children: const [
-                    Text("Country"),
-                    Text("City")
+                  Column(children: [
+                    BigText(text: "India",color: Color(0xFF89dad0),),
+                    Row(
+                      children: [
+                        SmallText(text: "Nagpur",color: Colors.black54,),
+                        const Icon(Icons.arrow_drop_down)
+                      ],
+                    )
                   ],),
                   Center(
                     child: Container(
@@ -33,9 +41,6 @@ class _HomeFoodPageState extends State< MainFoodPage> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         color: Color(0xFF89dad0),
-
-
-                        
                       ),
                     ),
                   )
@@ -43,6 +48,7 @@ class _HomeFoodPageState extends State< MainFoodPage> {
               ),
             ),
           ),
+         FoodPageBody(),
         ],
       ),
     );
