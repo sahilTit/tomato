@@ -48,7 +48,10 @@ class _HomeFoodPageState extends State< MainFoodPage> {
               ),
             ),
           ),
-         FoodPageBody(),
+          Expanded(child: SingleChildScrollView(
+            child:  FoodPageBody(),
+          )
+          ),
         ],
       ),
     );

@@ -55,7 +55,96 @@ class _FoodPageBodyState extends State<FoodPageBody>{
         activeSize: const Size(18.0, 9.0),
         activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
            ),
-        )
+        ),
+        SizedBox(height: 30,),
+        Container(
+          margin: EdgeInsets.only(left: 30),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              BigText(text: "Popular"),
+              SizedBox(width: 10,),
+               Container(
+                 margin: EdgeInsets.only(bottom: 3),
+                 child: BigText(text: ".",
+                 color: Colors.black26),
+               ),
+               SizedBox(width: 10,),
+               Container(
+                  margin: EdgeInsets.only(bottom: 2),
+                 child: SmallText(text: "Food pairing",
+                 color: Colors.black26,),
+               )
+            ],
+          ),
+        ),
+        //list of food and images
+         ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: 10,
+            itemBuilder: (context,index){
+              return Container(
+                margin: const EdgeInsets.only(right: 20,left: 20,bottom: 10),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 120,
+                      height: 120,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white38,
+                        image: const DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/food10.jpg")
+                        )
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 100,
+                        decoration:BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20),
+                            bottomRight: Radius.circular(20)
+                          ),
+                          color: Colors.white
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 10,right: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              BigText(text: "Curry with lots of Spices form India"),
+                              SizedBox(height: 10,),
+                              SmallText(text: "with Indian characteristics"),
+                              SizedBox(height: 10,),
+                               Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children:  const [
+                    IconAndTextWidget(
+                    icon: Icons.account_circle_sharp , 
+                    text: "Normal",
+                    iconColor: Colors.orangeAccent ),
+                     IconAndTextWidget(
+                    icon: Icons.location_on , 
+                    text: "1.4 Km",
+                    iconColor: Color(0xFF89dad0) ),
+                     IconAndTextWidget(
+                    icon: Icons.access_time_filled_rounded , 
+                    text: "45 Min",
+                    iconColor: Color(0xFFfcab88) )
+                  ],)
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              );
+          }),
     ],
   );
   }
