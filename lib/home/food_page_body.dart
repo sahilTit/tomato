@@ -1,6 +1,6 @@
-import 'dart:ffi';
-
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:tomato/utils/dimensions.dart';
 import 'package:tomato/widgets/big_text.dart';
 import 'package:tomato/widgets/icon_and_text_widget.dart';
 import 'package:tomato/widgets/small_text.dart';
@@ -15,7 +15,7 @@ class _FoodPageBodyState extends State<FoodPageBody>{
   PageController pageController = PageController(viewportFraction: 0.85);
   var _currPageValue=0.0;
   double _scaleFactor=0.8;
-  double _height=220;
+  double _height=Dimensions.PageViewContainer;
   @override
   void initState(){
     super.initState();
@@ -33,16 +33,30 @@ class _FoodPageBodyState extends State<FoodPageBody>{
 
   @override
   Widget build(BuildContext context) {
-  return Container(
-    //color: Colors.redAccent,
-    height: 320,
-    child: 
-  PageView.builder(
-    controller: pageController,
-    itemCount: 5,
-    itemBuilder: (contex, position){
-    return _buildPageItem(position);
-  }),
+  return Column(
+    children: [
+      Container(
+        //color: Colors.redAccent,
+        height: 320,
+        child: 
+      PageView.builder(
+        controller: pageController,
+        itemCount: 5,
+        itemBuilder: (contex, position){
+        return _buildPageItem(position);
+      }),
+      ),
+      new DotsIndicator(
+       dotsCount: 5,
+       position: _currPageValue,
+       decorator: DotsDecorator(
+         activeColor: Color(0xFF89dad0),
+        size: const Size.square(9.0),
+        activeSize: const Size(18.0, 9.0),
+        activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+           ),
+        )
+    ],
   );
   }
    Widget _buildPageItem(int index){
@@ -84,7 +98,7 @@ class _FoodPageBodyState extends State<FoodPageBody>{
         ),
         Align( alignment: Alignment.bottomCenter,
           child: Container(
-            height: 120,
+            height: Dimensions.PageViewTextContainer,
             margin: const EdgeInsets.only(left: 30,right: 30,bottom: 30),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
@@ -106,7 +120,7 @@ class _FoodPageBodyState extends State<FoodPageBody>{
               ]
             ),
             child: Container(
-              padding: EdgeInsets.only(top: 10,left: 15,right: 15),
+              padding: EdgeInsets.only(top: Dimensions.height15,left: 15,right: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -118,15 +132,17 @@ class _FoodPageBodyState extends State<FoodPageBody>{
                     size:17 ,)
                     )
                     ,),
-                    SizedBox(width: 10,),
+                    SizedBox(width: Dimensions.height10,),
                     SmallText(text: "4.5"),
                     SizedBox(width: 10),
                     SmallText(text: "273"),
                     SizedBox(width: 5),
                     SmallText(text: "comments")
                   ],),
-                  SizedBox(height: 20),
-                  Row(children:  const [
+                  SizedBox(height: Dimensions.height20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children:  const [
                     IconAndTextWidget(
                     icon: Icons.account_circle_sharp , 
                     text: "Normal",
