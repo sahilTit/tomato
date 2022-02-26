@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tomato/utils/dimensions.dart';
 import 'package:tomato/widgets/app_column.dart';
 import 'package:tomato/widgets/app_icon.dart';
 import 'package:tomato/widgets/big_text.dart';
-import 'package:tomato/widgets/icon_and_text_widget.dart';
-import 'package:tomato/widgets/small_text.dart';
 
 class PopularFoodDetail extends StatelessWidget{
   const PopularFoodDetail({Key? key}) : super(key: key);
@@ -12,6 +9,7 @@ class PopularFoodDetail extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           Positioned(
@@ -51,10 +49,57 @@ class PopularFoodDetail extends StatelessWidget{
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.white
               ),
-              child:  AppColumn()
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AppColumn(text: 'Spicy Curry',),
+                  SizedBox(height: 20,),
+                  BigText(text: "introduce")
+                ],
+              )
             )
           )
         ],
+      ),
+      bottomNavigationBar: Container(
+        height: 120,
+        padding: EdgeInsets.only(top: 30,bottom: 30,left: 20,right: 20),
+        decoration: BoxDecoration(
+          color: Color(0xFFf7f6f4),
+          borderRadius:BorderRadius.only(
+            topLeft: Radius.circular(40),
+            topRight: Radius.circular(40)
+          )
+        ),
+        child: Row(
+           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              padding: EdgeInsets.only(top: 20,bottom: 20,left: 20,right: 20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.remove,color: Colors.black,),
+                  SizedBox(width: 5,),
+                  BigText(text: "0"),
+                  SizedBox(width: 5),
+                  Icon(Icons.add,color: Colors.black,)
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 20,bottom: 20,left: 20,right: 20),
+              child: BigText(text: "\$10 | Add to cart",color: Colors.white,),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Color(0xFF89dad0)
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

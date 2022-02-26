@@ -5,14 +5,17 @@ import 'package:tomato/widgets/small_text.dart';
 import 'big_text.dart';
 
 class AppColumn extends StatelessWidget{
-  const AppColumn({Key? key}) : super(key: key);
+  final String text;
+   AppColumn({Key? key,
+    required this.text})
+     : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return  Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  BigText(text: "Spicy Curry"),
+                  BigText(text: text,size: 26,),
                   SizedBox(height: 10,),
                   Row(children: [
                     Wrap(children: List.generate(5, (index) => Icon(Icons.star,
