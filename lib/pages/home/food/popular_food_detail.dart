@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tomato/widgets/app_column.dart';
 import 'package:tomato/widgets/app_icon.dart';
 import 'package:tomato/widgets/big_text.dart';
+import 'package:tomato/widgets/expendable_text_widget.dart';
 
 class PopularFoodDetail extends StatelessWidget{
   const PopularFoodDetail({Key? key}) : super(key: key);
@@ -54,7 +55,12 @@ class PopularFoodDetail extends StatelessWidget{
                 children: [
                   AppColumn(text: 'Spicy Curry',),
                   SizedBox(height: 20,),
-                  BigText(text: "introduce")
+                  BigText(text: "introduce"),
+                  SizedBox(height: 20,),
+                  Expanded(child:
+                   SingleChildScrollView(child: 
+                    ExpandableTexWidgets(text: "Although there is no Indian dish in the Indian subcontinent called curry, the British lumped all sauce-based dishes under the generic name 'Curry'. Curry was introduced to English cuisine starting with Anglo-Indian cooking in the 17th century as spicy sauces were added to plain boiled and cooked meats.Although there is no Indian dish in the Indian subcontinent called curry, the British lumped all sauce-based dishes under the generic name 'Curry'. Curry was introduced to English cuisine starting with Anglo-Indian cooking in the 17th century as spicy sauces were added to plain boiled and cooked meats.Although there is no Indian dish in the Indian subcontinent called curry, the British lumped all sauce-based dishes under the generic name 'Curry'. Curry was introduced to English cuisine starting with Anglo-Indian cooking in the 17th century as spicy sauces were added to plain boiled and cooked meats.Although there is no Indian dish in the Indian subcontinent called curry, the British lumped all sauce-based dishes under the generic name 'Curry'. Curry was introduced to English cuisine starting with Anglo-Indian cooking in the 17th century as spicy sauces were added to plain boiled and cooked meats.Although there is no Indian dish in the Indian subcontinent called curry, the British lumped all sauce-based dishes under the generic name 'Curry'. Curry was introduced to English cuisine starting with Anglo-Indian cooking in the 17th century as spicy sauces were added to plain boiled and cooked meats.Although there is no Indian dish in the Indian subcontinent called curry, the British lumped all sauce-based dishes under the generic name 'Curry'. Curry was introduced to English cuisine starting with Anglo-Indian cooking in the 17th century as spicy sauces were added to plain boiled and cooked meats.Although there is no Indian dish in the Indian subcontinent called curry, the British lumped all sauce-based dishes under the generic name 'Curry'. Curry was introduced to English cuisine starting with Anglo-Indian cooking in the 17th century as spicy sauces were added to plain boiled and cooked meats.Although there is no Indian dish in the Indian subcontinent called curry, the British lumped all sauce-based dishes under the generic name 'Curry'. Curry was introduced to English cuisine starting with Anglo-Indian cooking in the 17th century as spicy sauces were added to plain boiled and cooked meats.Although there is no Indian dish in the Indian subcontinent called curry, the British lumped all sauce-based dishes under the generic name 'Curry'. Curry was introduced to English cuisine starting with Anglo-Indian cooking in the 17th century as spicy sauces were added to plain boiled and cooked meats.")),
+                  )
                 ],
               )
             )

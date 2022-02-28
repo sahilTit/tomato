@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 class BigText extends StatelessWidget{
    Color? color;
   final String text;
-  double size;
+  double? size;
   TextOverflow overflow;
     BigText({Key? key,
    this.color = const Color(0xFF332d2b),
