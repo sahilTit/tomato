@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tomato/widgets/big_text.dart';
 import 'package:tomato/widgets/small_text.dart';

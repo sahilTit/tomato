@@ -70,7 +70,7 @@ class PopularFoodDetail extends StatelessWidget{
       bottomNavigationBar: Container(
         height: 120,
         padding: EdgeInsets.only(top: 30,bottom: 30,left: 20,right: 20),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xFFf7f6f4),
           borderRadius:BorderRadius.only(
             topLeft: Radius.circular(40),

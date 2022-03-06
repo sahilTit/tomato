@@ -35,7 +35,11 @@ class _ExpandableTextWidgetsState extends State<ExpandableTexWidgets>{
     return Container(
       child: secondHalf.isEmpty?SmallText(text: firstHalf):Column(
         children: [
-          SmallText(text: HiddenText?(firstHalf+"..."):(firstHalf+secondHalf) ),
+          SmallText(
+           size:16,
+           color:Colors.black54,
+           height: 1.4,
+           text: HiddenText?(firstHalf+"..."):(firstHalf+secondHalf) ),
           InkWell(
             onTap: (){
               setState(() {
