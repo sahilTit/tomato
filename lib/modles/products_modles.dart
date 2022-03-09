@@ -3,6 +3,7 @@
   int? _typeId;
   int? _offset;
   late List<ProductModle> _products;
+  List<ProductModle> get products=>_products;
 
   Product({required totalSize,required typeId,required offset,required products}){
    this._totalSize=totalSize;
