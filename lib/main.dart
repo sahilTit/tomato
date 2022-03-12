@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tomato/controller/popular_product_controller.dart';
-import 'package:tomato/pages/home/food/recommended_food_detail.dart';
-import 'package:tomato/pages/home/main_food_page.dart';
-import 'pages/home/food/popular_food_detail.dart';
 import 'helper/dependencies.dart' as dep;
+import 'pages/home/main_food_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: RecommendedFoodDetail()
+      home: MainFoodPage()
     );
   }
 }

@@ -1,5 +1,8 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:tomato/controller/popular_product_controller.dart';
+import 'package:tomato/data/api/reprisotry/popular_product_repo.dart';
 import 'package:tomato/utils/dimensions.dart';
 import 'package:tomato/widgets/app_column.dart';
 import 'package:tomato/widgets/big_text.dart';
@@ -36,19 +39,22 @@ class _FoodPageBodyState extends State<FoodPageBody>{
   Widget build(BuildContext context) {
   return Column(
     children: [
-      Container(
+      GetBuilder<PopularProductsController>(builder: (PopularProducts){
+        return Container(
         //color: Colors.redAccent,
         height: 320,
         child: 
       PageView.builder(
         controller: pageController,
-        itemCount: 5,
+        itemCount: PopularProducts.PopularProductList.length,
         itemBuilder: (contex, position){
         return _buildPageItem(position);
       }),
-      ),
-      new DotsIndicator(
-       dotsCount: 5,
+      );
+      }),
+      GetBuilder<PopularProductsController>(builder: (PopularProducts){
+        return DotsIndicator(
+       dotsCount: PopularProducts.PopularProductList.length,
        position: _currPageValue,
        decorator: DotsDecorator(
          activeColor: Color(0xFF89dad0),
@@ -56,7 +62,8 @@ class _FoodPageBodyState extends State<FoodPageBody>{
         activeSize: const Size(18.0, 9.0),
         activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
            ),
-        ),
+        );
+      }),
         SizedBox(height: 30,),
         Container(
           margin: EdgeInsets.only(left: 30),
